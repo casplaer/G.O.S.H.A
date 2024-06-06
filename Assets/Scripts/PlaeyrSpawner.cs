@@ -15,7 +15,5 @@ public class PlaeyrSpawner : MonoBehaviour
     {
         playerPrefab.transform.position = transform.position;
 
-        //Instantiate(playerPrefab, transform.position, transform.rotation);
-
     }
 }

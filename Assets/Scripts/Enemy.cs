@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     float nextAttackTime = 0f;
 
     public float maxHealth = 100f;
-    private float currentHealth;
+    public float currentHealth;
 
     private bool isAttacking = false;
 
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         CheckForPlayerInRange();
     }
 
-    void ChasePlayer()
+    public void ChasePlayer()
     {
         Vector2 direction = (player.position - transform.position).normalized;
         float distance = Vector2.Distance(player.position, transform.position);
@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0f, facingLeft ? 180f : 0f, 0f));
     }
 
-    void CheckForPlayerInRange()
+    public void CheckForPlayerInRange()
     {
         if (isAttacking) return;
 

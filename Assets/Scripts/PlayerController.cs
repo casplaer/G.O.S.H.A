@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public GameObject deathMenu;
 
     public float maxHealth = 100f;
-    float currentHealth;
+    public float currentHealth;
 
     Vector2 movement;
     bool wasMovingLeft = false;
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0f, facingLeft ? 180f : 0f, 0f));
     }
 
-    void Attack()
+    public void Attack()
     {
         animator.SetTrigger("Attack");
         animator.SetInteger("AttackType", Random.Range(1,4));
@@ -108,8 +108,7 @@ public class PlayerController : MonoBehaviour
         if (currentHealth <= 0)
         {
             DeathMenu.isDead = true;
-            //Debug.Log("Dead");
-            //Die();
+
         }
     }
 }
