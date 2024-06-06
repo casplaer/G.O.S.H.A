@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class DesctructableObject : MonoBehaviour
 {
-    public Animator animator;
-
     public float maxHealth = 100f;
     private float currentHealth;
 
@@ -18,20 +16,17 @@ public class Enemy : MonoBehaviour
     {
         currentHealth -= damage;
 
-        animator.SetTrigger("Hurt");
-
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
-            Die();
+            DestroySelf();
         }
     }
 
-    void Die()
+    void DestroySelf()
     {
-        animator.SetBool("IsDead", true);
-        
         GetComponent<Collider2D>().enabled = false;
-
         this.enabled = false;
+
+        Destroy(gameObject);
     }
 }

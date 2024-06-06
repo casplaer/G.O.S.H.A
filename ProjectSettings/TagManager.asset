@@ -12,8 +12,8 @@ TagManager:
   - Water
   - UI
   - Enemies
-  - 
-  - 
+  - Player
+  - DestructableObjects
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Layer 3
     uniqueID: 4189426099
+    locked: 0
+  - name: Player
+    uniqueID: 2813378229
     locked: 0
